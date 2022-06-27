@@ -173,18 +173,22 @@ const App = () => {
 
   if (!address) {
     return (
-      <div className="landing">
-          <h1>Welcome to MemeDAO</h1>
-          <button onClick={connectWithMetamask} className="btn-hero">Connect Wallet</button>
+      <div className="wrapper">
+        <div className="landing">
+            <h1>Welcome to MemeDAO</h1>
+            <button onClick={connectWithMetamask} className="btn-hero">Connect Wallet</button>
+        </div>
       </div>
     )
   }
 
   if (address && (network?.[0].data.chain.id !== ChainId.Rinkeby)) {
     return (
-      <div className="unsupported-network">
-         <h2>Please connect to Rinkeby</h2>
-         <p>This dApp only works with the Rinkeby network, please switch networks on your connected wallet.</p>
+      <div className="wrapper">
+        <div className="unsupported-network">
+           <h2>Please connect to Rinkeby</h2>
+           <p>This dApp only works with the Rinkeby network, please switch networks on your connected wallet.</p>
+        </div>
       </div>
     )
   }
